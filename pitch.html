@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pitch Recognition with Web Audio API</title>
+    <meta content="">
+    <style>
+        
+        body {
+            background: #000;
+        }
+        
+        .container {
+            width: 500px;   
+            margin: 0 auto;   
+            border: 11px solid #00C579;
+            padding: 20px;
+            background: #fff;
+        }
+        
+        .hidden {
+            display:none;   
+        }
+        
+        #canvas {
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+            background-color: black;
+        }
+        
+        select, button {
+           width: 200px;
+            height: 30px;
+        }
+        
+        
+    </style>
+    <script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+    <script>
+
+    </script>
+</head>
+<body>
+   
+    <div class="container">
+    <h2>Pitch recognition with FFT and auto-correlation</h2>
+
+
+    <div class="element" data-key="test">
+        <h3>
+        Audio source
+        </h3>
+
+        <input id="fileInput" type="file" accept="audio/*" /><br />
+    
+        <br />
+        
+        <select name="pitch" class="pitch">
+            <option value="0.25">-2 octave</option>
+            <option value="0.5">-1 octave</option>
+            <option value="1" selected>0</option>
+            <option value="2">+1 octave</option>
+            <option value="4">+2 octave</option>
+        </select>
+        
+        <br /><br />
+        <!--<button class="play">Play</button>-->
+        
+        <h3>
+        Estimate pitch
+        </h3>
+        <p>
+            <button class="autocorrelation">Auto-correlation</button>
+            <br />
+            <b>Current note: </b>
+            <span class="note-acorr"></span>
+            <br /><br />
+            <b>Notes:</b>
+            <span class="notes-acorr"></span>
+        </p>
+        <p>
+            <button class="fft">FFT</button>
+            <br />
+            <b>Current note: </b>
+            <span class="note-fft"></span>
+            <br /><br />
+            <b>Notes:</b>
+            <span class="notes-fft"></span>
+        </p>
+
+
+    </div>
+        </div>
+     <script type="text/javascript" src="script.js"></script>
+</body>
+</html>
